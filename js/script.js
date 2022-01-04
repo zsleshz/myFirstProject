@@ -1,14 +1,16 @@
 'use strict';
+
 let numberOfFilms;
 
 function start() {
   numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
 
-  while(numberOfFilms == ''|| numberOfFilms == null || isNaN(numberOfFilms)) //проверяем пуста ли строка или пользователь отменяет действие или пользователь ввел именно число 
+  while (numberOfFilms == ''  || numberOfFilms == null || isNaN(numberOfFilms)) //проверяем пуста ли строка или пользователь отменяет действие или пользователь ввел именно число 
           {
             numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');//просто переспрашиваем
           } 
 }
+start();
 
 const personalMovieDB = {
   count: numberOfFilms,
@@ -20,20 +22,20 @@ const personalMovieDB = {
 };
 
 
-console.log(personalMovieDB);
+// console.log(personalMovieDB);
 //////////////////////////////////////////////////////////
-if ( 5 == 7) {
-    console.log('Верно');
-} else {
-    console.log('No Discription');
-}
+// if ( 5 == 7) {
+//     console.log('Верно');
+// } else {
+//     console.log('No Discription');
+// }
 ////////////////////////
 ///////////////////////////////////
 ///////////////////////////////////
 
 function rememberMyFilms() {
   for (let i = 0; i < 3; i++){
-    const a = prompt('Один из последних просмотренных фильмов?', ''),
+    const a = prompt('Один из последних просмотренных филь мов?', ''),
           b = prompt('На сколько оцените его?', '');
           
   
@@ -47,12 +49,12 @@ function rememberMyFilms() {
   } 
 }
  
-rememberMyFilms();
+// rememberMyFilms();
 
 
 function detectPersonalLevel() {
   if (personalMovieDB.count < 10) {
-    console.log(alert("Просмотрено довольно мало фильмов"));
+    cons ole.log(alert("Просмотрено довольно мало фильмов"));
   } else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30) {
   console.log(alert("Вы классический зритель"));
   } else if (personalMovieDB.count >= 30)  {
@@ -64,6 +66,22 @@ function detectPersonalLevel() {
 
 detectPersonalLevel();
 
+function showMyDB (hidden) {
+  if (!hidden) {//если наша бза не скрыта то ее покзываем
+    console.log(personalMovieDB) ;
+  }
+}
+ 
+showMyDB(personalMovieDB.privat);
+
+function writeYourGenres() {
+  for (let i = 1; i <= 3; i++) //выводим цыкл нчиня с 1 повтор 3 раза и i++
+  {
+  const genre = prompt(`Ваш любимый жанр под номером ${i}`);
+  personalMovieDB.genres[i - 1] =genre;
+  }
+}
+writeYourGenres();
 ////////////////////////////////////////////////////////////////////////
 // let x = 0;
 // while (x < 1){
