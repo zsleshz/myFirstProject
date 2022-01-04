@@ -54,7 +54,7 @@ function rememberMyFilms() {
 
 function detectPersonalLevel() {
   if (personalMovieDB.count < 10) {
-    cons ole.log(alert("Просмотрено довольно мало фильмов"));
+    console.log(alert("Просмотрено довольно мало фильмов"));
   } else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30) {
   console.log(alert("Вы классический зритель"));
   } else if (personalMovieDB.count >= 30)  {
