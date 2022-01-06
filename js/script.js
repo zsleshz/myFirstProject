@@ -5,11 +5,12 @@ let numberOfFilms;
 function start() {
   numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
 
-  while (numberOfFilms == ''  || numberOfFilms == null || isNaN(numberOfFilms)) //проверяем пуста ли строка или пользователь отменяет действие или пользователь ввел именно число 
+  while (numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)) //проверяем пуста ли строка или пользователь отменяет действие или пользователь ввел именно число 
           {
             numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');//просто переспрашиваем
           } 
 }
+
 start();
 
 const personalMovieDB = {
@@ -64,7 +65,7 @@ function detectPersonalLevel() {
     }
 }
 
-detectPersonalLevel();
+// detectPersonalLevel();
 
 function showMyDB (hidden) {
   if (!hidden) {//если наша бза не скрыта то ее покзываем
@@ -77,8 +78,7 @@ showMyDB(personalMovieDB.privat);
 function writeYourGenres() {
   for (let i = 1; i <= 3; i++) //выводим цыкл нчиня с 1 повтор 3 раза и i++
   {
-  const genre = prompt(`Ваш любимый жанр под номером ${i}`);
-  personalMovieDB.genres[i - 1] =genre;
+  personalMovieDB.genres[i - 1] = prompt(`Ваш любимый жанр под номером ${i}`);
   }
 }
 writeYourGenres();
